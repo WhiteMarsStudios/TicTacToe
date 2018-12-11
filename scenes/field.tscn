@@ -9,8 +9,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 25.0
-margin_top = 25.0
+margin_left = 48.0
+margin_top = 56.0
+margin_right = 48.0
+margin_bottom = 56.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -22,12 +24,13 @@ _sections_unfolded = [ "Anchor", "Margin" ]
 
 [node name="GridContainer" type="GridContainer" parent="." index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 50.0
-margin_bottom = 50.0
+margin_right = 100.0
+margin_bottom = 100.0
 rect_min_size = Vector2( 50, 50 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -39,6 +42,9 @@ custom_constants/vseparation = 50
 custom_constants/hseparation = 50
 columns = 3
 _sections_unfolded = [ "Size Flags", "custom_constants" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GridContainer" index="0"]
 
@@ -217,7 +223,7 @@ _sections_unfolded = [ "Size Flags" ]
 
 [node name="Node2D" parent="GridContainer/HBoxContainer9" index="0" instance=ExtResource( 2 )]
 
-[node name="Button" type="Button" parent="." index="1"]
+[node name="client_button" type="Button" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -242,7 +248,7 @@ text = "C"
 flat = false
 align = 1
 
-[node name="Button2" type="Button" parent="." index="2"]
+[node name="server_button" type="Button" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -267,8 +273,105 @@ text = "S"
 flat = false
 align = 1
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[node name="my_ip_label" type="Label" parent="." index="3"]
 
-[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 142.0
+margin_top = -47.0
+margin_right = 185.0
+margin_bottom = -33.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "My ip: "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="my_ip_info" type="Label" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 206.0
+margin_top = -47.0
+margin_right = 246.0
+margin_bottom = -33.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "i.p."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="server_ip_label" type="Label" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 143.0
+margin_top = -19.0
+margin_right = 203.0
+margin_bottom = -5.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Server ip:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="server_ip_input" type="TextEdit" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 210.0
+margin_top = -20.0
+margin_right = 322.0
+margin_bottom = 11.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = ""
+readonly = false
+highlight_current_line = false
+syntax_highlighting = false
+show_line_numbers = false
+highlight_all_occurrences = false
+override_selected_font_color = false
+context_menu_enabled = true
+smooth_scrolling = false
+v_scroll_speed = 80.0
+hiding_enabled = 0
+wrap_lines = false
+caret_block_mode = false
+caret_blink = false
+caret_blink_speed = 0.65
+caret_moving_by_right_click = true
+
+[connection signal="pressed" from="client_button" to="." method="_on_Button_pressed"]
+
+[connection signal="pressed" from="server_button" to="." method="_on_Button2_pressed"]
 
 
